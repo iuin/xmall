@@ -1,9 +1,9 @@
 package com.dell.emc.xmall.user.service.impl;
 
-import com.dell.emc.xmall.user.entity.MemberLevel;
-import com.dell.emc.xmall.user.mapper.MemberLevelMapper;
-import com.dell.emc.xmall.user.service.MemberLevelService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.dell.emc.xmall.entity.MemberLevel;
+import com.dell.emc.xmall.mapper.MemberLevelMapper;
+import com.dell.emc.xmall.user.service.MemberLevelService;
 import org.springframework.stereotype.Service;
 
 /**

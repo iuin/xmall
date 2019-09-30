@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.dell.emc.xmall.user.mapper.MemberReceiveAddressMapper">
+<mapper namespace="com.dell.emc.xmall.mapper.MemberReceiveAddressMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.dell.emc.xmall.user.entity.MemberReceiveAddress">
+    <resultMap id="BaseResultMap" type="com.dell.emc.xmall.entity.MemberReceiveAddress">
         <id column="id" property="id" />
         <result column="member_id" property="memberId" />
         <result column="name" property="name" />

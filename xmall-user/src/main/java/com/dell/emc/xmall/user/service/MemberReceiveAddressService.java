@@ -1,7 +1,7 @@
 package com.dell.emc.xmall.user.service;
 
-import com.dell.emc.xmall.user.entity.MemberReceiveAddress;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dell.emc.xmall.entity.MemberReceiveAddress;
 
 /**
  * <p>

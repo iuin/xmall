@@ -1,4 +1,4 @@
-package com.dell.emc.xmall.user.utils;
+package com.dell.emc.xmall;
 
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -27,7 +27,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir")+"/xmall-user/";
+        String projectPath = System.getProperty("user.dir")+"/xmall-api/";
         gc.setOutputDir(projectPath  + "src/main/java");//生成文件的输出目录
         gc.setAuthor("zhangf30");//开发人员
         gc.setOpen(false);//是否打开输出目录
@@ -55,7 +55,7 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         //pc.setModuleName(scanner("模块名"));//父包模块名
-        pc.setParent("com.dell.emc.xmall.user");//父包名。// 自定义包路径  如果为空，将下面子包名必须写全部， 否则就只需写子包名
+        pc.setParent("com.dell.emc.xmall");//父包名。// 自定义包路径  如果为空，将下面子包名必须写全部， 否则就只需写子包名
         pc.setEntity("entity");
         pc.setService("service");
         pc.setServiceImpl("service.impl");
@@ -98,5 +98,9 @@ public class CodeGenerator {
         strategy.setTablePrefix("ums_");//表前缀
         mpg.setStrategy(strategy);
         mpg.execute();
+
+        System.out.println("end");
+
+
     }
 }

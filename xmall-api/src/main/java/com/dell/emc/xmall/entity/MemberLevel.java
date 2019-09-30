@@ -1,4 +1,4 @@
-package com.dell.emc.xmall.user.entity;
+package com.dell.emc.xmall.entity;
 
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.TableName;

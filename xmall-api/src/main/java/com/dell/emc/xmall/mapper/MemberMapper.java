@@ -1,6 +1,6 @@
-package com.dell.emc.xmall.user.mapper;
+package com.dell.emc.xmall.mapper;
 
-import com.dell.emc.xmall.user.entity.Member;
+import com.dell.emc.xmall.entity.Member;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

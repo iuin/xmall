@@ -2,8 +2,9 @@ package com.dell.emc.xmall.user.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.dell.emc.xmall.user.entity.Member;
-import com.dell.emc.xmall.user.entity.MemberReceiveAddress;
+import com.dell.emc.xmall.entity.Member;
+import com.dell.emc.xmall.entity.MemberLevel;
+import com.dell.emc.xmall.entity.MemberReceiveAddress;
 import com.dell.emc.xmall.user.service.MemberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,5 +43,11 @@ public class MemberServiceImplTest {
         for (MemberReceiveAddress receiveAddress : memberReceiveAddress) {
             System.out.println(receiveAddress);
         }
+    }
+
+    @Test
+    public void findMemberLevel() {
+        MemberLevel memberLevel = memberService.findMemberLevel(1l);
+        System.out.println(memberLevel);
     }
 }

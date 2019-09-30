@@ -1,7 +1,7 @@
 package com.dell.emc.xmall.user.service;
 
-import com.dell.emc.xmall.user.entity.MemberLevel;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dell.emc.xmall.entity.MemberLevel;
 
 /**
  * <p>
