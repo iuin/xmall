@@ -1,4 +1,4 @@
-package com.dell.emc.xmall.user.service;
+package com.dell.emc.xmall.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.dell.emc.xmall.entity.Member;
@@ -16,6 +16,9 @@ import java.util.List;
  * @since 2019-09-30
  */
 public interface MemberService extends IService<Member> {
+
+    List<Member> pageList();
+
     List<MemberReceiveAddress> findMemberReceiveAddress(Long memberId);
 
     MemberLevel findMemberLevel(Long memberLevelId);

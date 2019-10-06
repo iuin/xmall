@@ -1,10 +1,10 @@
 package com.dell.emc.xmall.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dell.emc.xmall.entity.MemberLevel;
 import com.dell.emc.xmall.mapper.MemberLevelMapper;
-import com.dell.emc.xmall.user.service.MemberLevelService;
-import org.springframework.stereotype.Service;
+import com.dell.emc.xmall.service.MemberLevelService;
 
 /**
  * <p>

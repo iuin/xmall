@@ -1,5 +1,6 @@
 package com.dell.emc.xmall.user.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dell.emc.xmall.entity.Member;
@@ -8,9 +9,8 @@ import com.dell.emc.xmall.entity.MemberReceiveAddress;
 import com.dell.emc.xmall.mapper.MemberLevelMapper;
 import com.dell.emc.xmall.mapper.MemberMapper;
 import com.dell.emc.xmall.mapper.MemberReceiveAddressMapper;
-import com.dell.emc.xmall.user.service.MemberService;
+import com.dell.emc.xmall.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ import java.util.List;
  * @author zhangf30
  * @since 2019-09-30
  */
-@Service
+@Service(version = "${user.service.version}")
 public class MemberServiceImpl extends ServiceImpl<MemberMapper, Member> implements MemberService {
 
     @Autowired
@@ -30,6 +30,11 @@ public class MemberServiceImpl extends ServiceImpl<MemberMapper, Member> impleme
 
     @Autowired
     MemberLevelMapper memberLevelMapper;
+
+    @Override
+    public List<Member> pageList() {
+        return list(new QueryWrapper<>());
+    }
 
     @Override
     public List<MemberReceiveAddress> findMemberReceiveAddress(Long memberId) {

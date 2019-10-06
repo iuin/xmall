@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.dell.emc.xmall.entity.Member;
 import com.dell.emc.xmall.entity.MemberLevel;
 import com.dell.emc.xmall.entity.MemberReceiveAddress;
-import com.dell.emc.xmall.user.service.MemberService;
+import com.dell.emc.xmall.service.MemberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
