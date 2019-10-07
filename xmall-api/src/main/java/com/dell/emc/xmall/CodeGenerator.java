@@ -45,7 +45,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/xmall_dev?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/xmall_dev?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT");
         // dsc.setSchemaName("public"); 数据库 schema name
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
@@ -93,9 +93,12 @@ public class CodeGenerator {
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);//数据库表字段映射到实体的命名策略, 未指定按照 naming 执行
         strategy.setEntityLombokModel(true);//【实体】是否为lombok模型（默认 false）
         strategy.setRestControllerStyle(true);//生成 @RestController 控制器
-        strategy.setInclude("ums_member", "ums_member_level", "ums_member_receive_address");//需要包含的表名，允许正则表达式
+        strategy.setInclude(
+                "^ums_.*",
+                "^pms_.*"
+        );//需要包含的表名，允许正则表达式
         strategy.setControllerMappingHyphenStyle(true);//驼峰转连字符
-        strategy.setTablePrefix("ums_");//表前缀
+        strategy.setTablePrefix("ums_", "pms_");//表前缀
         mpg.setStrategy(strategy);
         mpg.execute();
 
