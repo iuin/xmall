@@ -1,10 +1,13 @@
 package com.dell.emc.xmall.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dell.emc.xmall.entity.BaseCatalog2;
 import com.dell.emc.xmall.mapper.BaseCatalog2Mapper;
 import com.dell.emc.xmall.service.BaseCatalog2Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,8 @@ import com.dell.emc.xmall.service.BaseCatalog2Service;
 @Service
 public class BaseCatalog2ServiceImpl extends ServiceImpl<BaseCatalog2Mapper, BaseCatalog2> implements BaseCatalog2Service {
 
+    @Override
+    public List<BaseCatalog2> findAllByCatalog1Id(Long catalog1Id) {
+        return list(new QueryWrapper<BaseCatalog2>().eq("catalog1_id", catalog1Id));
+    }
 }
