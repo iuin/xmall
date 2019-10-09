@@ -22,7 +22,7 @@ import java.util.List;
  * @author zhangf30
  * @since 2019-09-30
  */
-@Service(version = "${user.service.version}")
+@Service(version = "${version}")
 public class MemberServiceImpl extends ServiceImpl<MemberMapper, Member> implements MemberService {
 
     @Autowired

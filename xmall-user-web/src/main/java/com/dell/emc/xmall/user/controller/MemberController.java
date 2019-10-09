@@ -22,7 +22,7 @@ import java.util.List;
 @RequestMapping("/member")
 public class MemberController {
 
-    @Reference(version = "${user.service.version}")
+    @Reference(version = "${version}")
     MemberService memberService;
 
     @GetMapping

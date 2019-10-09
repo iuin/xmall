@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    include: base
+
+remote: &address
+  address: 10.62.229.205:2181
+
+server:
+  port: 8082
+dubbo:
+  application:
+    name: user-web
+  registry:
+    <<: *address
+    protocol: zookeeper
+  protocol:
+    port: 20882
+  scan:
+    base-packages: com.dell.emc.xmall
+
+version: 1.0

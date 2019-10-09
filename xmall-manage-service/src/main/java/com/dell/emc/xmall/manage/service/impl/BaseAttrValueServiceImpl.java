@@ -1,10 +1,13 @@
 package com.dell.emc.xmall.manage.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.dell.emc.xmall.entity.BaseAttrValue;
 import com.dell.emc.xmall.mapper.BaseAttrValueMapper;
 import com.dell.emc.xmall.service.BaseAttrValueService;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,8 @@ import com.dell.emc.xmall.service.BaseAttrValueService;
 @Service
 public class BaseAttrValueServiceImpl extends ServiceImpl<BaseAttrValueMapper, BaseAttrValue> implements BaseAttrValueService {
 
+    @Override
+    public List<BaseAttrValue> findAll(Long attrId) {
+        return list(new QueryWrapper<BaseAttrValue>().eq("attr_id", attrId));
+    }
 }

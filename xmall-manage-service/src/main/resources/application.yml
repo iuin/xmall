@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    include: base
+
+remote: &address
+  address: 10.62.229.205:2181
+
+server:
+  port: 8083
+dubbo:
+  application:
+    name: manage-service
+  registry:
+    <<: *address
+    protocol: zookeeper
+  protocol:
+    port: 20883
+  scan:
+    base-packages: com.dell.emc.xmall
+
+version: 1.0
