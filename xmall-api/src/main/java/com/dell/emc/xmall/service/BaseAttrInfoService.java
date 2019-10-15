@@ -2,6 +2,7 @@ package com.dell.emc.xmall.service;
 
 import com.dell.emc.xmall.entity.BaseAttrInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dell.emc.xmall.vo.AttrInfoVO;
 
 import java.util.List;
 
@@ -14,5 +15,7 @@ import java.util.List;
  * @since 2019-10-07
  */
 public interface BaseAttrInfoService extends IService<BaseAttrInfo> {
-    public List<BaseAttrInfo> findAll(Long catalog3Id);
+    List<BaseAttrInfo> findAll(Long catalog3Id);
+
+    boolean saveAttrInfo(AttrInfoVO attrInfoVO);
 }

@@ -3,12 +3,9 @@ package com.dell.emc.xmall.manage.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.dell.emc.xmall.entity.BaseAttrInfo;
-import com.dell.emc.xmall.mapper.BaseAttrInfoMapper;
 import com.dell.emc.xmall.service.BaseAttrInfoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.dell.emc.xmall.vo.AttrInfoVO;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +27,17 @@ public class BaseAttrInfoController {
     @GetMapping("attrInfoList")
     public List<BaseAttrInfo> getAttrInfoList(Long catalog3Id) {
         return attrInfoService.findAll(catalog3Id);
+    }
+
+    @PostMapping("saveAttrInfo")
+    public String saveAttrInfo(@RequestBody AttrInfoVO attrInfoVO) {
+        System.out.println(attrInfoVO);
+        boolean success = attrInfoService.saveAttrInfo(attrInfoVO);
+        if(success) {
+            return "success";
+        } else {
+            return "error";
+        }
     }
 }
 
