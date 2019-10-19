@@ -46,14 +46,16 @@ public class BaseAttrInfoServiceImpl extends ServiceImpl<BaseAttrInfoMapper, Bas
         saveOrUpdate(baseAttrInfo);
         List<BaseAttrValue> attrValues = attrValueList.stream().map(e -> {
                 BaseAttrValue value = new BaseAttrValue();
-                value.setId(e.getId());
+                value.setId(null);
                 value.setAttrId(baseAttrInfo.getId());
                 value.setValueName(e.getValueName());
+                value.setIsEnabled("");
                 return value;
             }
         ).collect(Collectors.toList());
+        attrValueService.remove(new QueryWrapper<BaseAttrValue>().eq("attr_id", baseAttrInfo.getId()));
         if(attrValues.isEmpty()) {
-            return attrValueService.remove(new QueryWrapper<BaseAttrValue>().eq("attr_id", baseAttrInfo.getId()));
+            return true;
         }
         return attrValueService.saveOrUpdateBatch(attrValues);
     }
